@@ -1,0 +1,550 @@
+-- LAB 01 --
+
+1.Zmień własne hasło. Następnie powróć do hasła domyślnego.
+	passwd
+
+2.Sprawdź własny identyfikator oraz grupy, do których należysz.
+	id
+
+3.Sprawdź kto jest zalogowany w chwili obecnej w systemie.
+	who
+
+4.Zapoznaj się z opisem struktury katalogów
+	man 7 hier
+
+5.Wyświetl zawartość katalogu domowego.
+	ls ~
+
+6.Wyświetl zawartość podstawowych katalogów w systemie (np. /dev, /etc, /home, /usr).
+	ls /etc;
+	ls /dev
+	ls /etc
+	ls /home
+	ls /usr
+
+7.Utwórz katalog kat1 w katalogu domowym.
+	mkdir ~/kat1
+
+8.W katalogu kat1 utwórz jednym poleceniem strukturę katalogów kat2/kat3/kat4.
+	mkdir -p ~/kat1/kat2/kat3/kat4
+
+9.Usuń jednym poleceniem cała strukturę katalogów kat3/kat4.
+	rm -r ~/kat1/kat2/kat3
+
+10.Utwórz w katalogu domowym pliki o dowolnych nazwach z rozszerzeniami .txt i .c (po 2-3 pliki z każdym z rozszerzeń)
+	touch ~/x.txt
+	touch ~/xD.txt
+	touch ~/xDD.txt
+	touch ~/y.c
+	touch ~/y.cc
+
+11.Skopiuj jednym poleceniem wszystkie pliki z katalogu domowego z rozszerzeniem .txt do katalogu kat1.
+	cp ./*.txt ~/kat1
+
+12.Skopiuj jednym poleceniem wszystkie pliki z katalogu domowego z rozszerzeniem .c do katalogu kat2.
+	cp ./*.c ~/kat1/kat2
+
+13.Skopiuj całą strukturę katalogów kat1 tworząc analogiczną strukturę o nazwie kat1b.
+	cp -r ~/kat1 ~/kat1b
+
+14.Usuń wszystkie pliki z katalogu kat1/kat2.
+	rm ~/kat1/kat2/*
+
+15.Usuń jednym poleceniem całą strukturę katalogów kat1b.
+	rm -r ~/kat1b
+
+16.Zmień nazwę dowolnego pliku w katalogu kat1.
+	mv ~/kat1/x.txt ~/kat1/xx.txt
+
+17.Przenieś katalog kat1/kat2 do katalogu domowego tworząc w ten sposób katalog kat2b.
+	mv ~/kat1 ~/kat2b
+
+18.Korzystając z programu find znajdź wszystkie pliki, które posiadają w nazwie słowo mozilla i znajdują się w podkatalogach katalogu /usr.
+	find /usr -name mozilla
+
+19.Korzystając z programu find znajdź wszystkie katalogi o nazwie bin, które znajdują się w katalogu /usr.
+	find /usr -type d -name bin
+
+20.Skopiuj wszystkie pliki zwykłe o rozmiarze pomiędzy 10 a 100 bajtów z katalogu /usr/bin do katalogu kat1/kat2 (wykorzystaj polecenie find z parametrem -exec).
+	find /usr/bin -size +10 -size -100 -exec cp {} ~/kat1/kat2 \;
+
+21.W katalogu domowym utwórz plik o nazwie plik.txt - sprawdź jakie są prawa dostępu do niego.
+	touch ~/plik.txt
+	ls -l
+
+22.Dla pliku plik.txt dodaj prawo zapisu dla pozostałych użytkowników.
+	chmod a+w ~/pliK.txt
+
+23.Dla pliku plik.txt odejmij prawo zapisu dla właściciela.
+	chmod u-w ~/plik.txt
+
+24.Dla pliku plik.txt dodaj prawo wykonywania dla wszystkich użytkowników.
+	chmod +x ~/plik.txt
+
+25.Dla pliku plik.txt i wszystkich użytkowników zezwól jedynie na odczyt pliku.
+	chmod 444 ~/plik.txt
+
+26.Dla pliku plik.txt przywróć oryginalne prawa korzystając z notacji numerycznej.
+	chmod 664 ~/plik.txt
+
+27.Utwórz dowiązanie do pliku plik.txt o nazwie plik2.txt w katalogu domowym.
+	ln ~/plik.txt ~/plik2.txt
+
+28.Utwórz dowiązanie symboliczne do katalogu kat1/kat2 o nazwie abc w katalogu domowym.
+	ln -s ~/kat1/kat2 ~/abc
+
+29.Przejrzyj pomoc systemową dla wszystkich poleceń zaprezentowanych podczas zajęć.
+	ok
+
+-- LAB 02 --
+
+1.Wyświetl listę własnych procesów komendą ps. Porównaj wyniki z wynikami poleceń: ps ­x i ps ­ax.
+	a - wypisuje wszystkie procesy z tty
+
+2.Zaloguj się do systemu kilkukrotnie poprzez wirtualne konsole lub otwierając nowe okno w środowisku graficznym. Każdorazowo sprawdź poleceniem tty nazwę terminala, na którym pracujesz.
+	tty
+	/dev/pts/{nr_konsoli}
+
+3.Wyświetl hierarchię procesów poleceniem pstree.
+	pstree
+
+4.Obejrzyj listę procesów poleceniem top sortując ją wg stopnia zajętości procesora i ilości zajętej pamięci (sprawdź przełącznik -o)
+	top
+	top -o %MEM
+
+5.Wykonaj kolejno następujące kroki:
+
+  - Zmień priorytet powłoki bash, w której aktualnie się znajdujesz na 10.
+	sudo chvt 10 / Ctrl + Alt + F10
+
+  - Uruchom polecenie sleep na 30 sekund. Od razu wstrzymaj je kombinacją Ctrl-Z.
+	sleep 30s
+
+  - Uruchom w tle kolejne polecenie sleep, tym razem na 3600 sekund.
+	sleep 3600s &
+
+  - Wyświetl aktywne zadania w bieżącej sesji komendą jobs.
+	jobs
+
+  - Sprawdź odpowiednim poleceniem ps priorytet i status
+    (uruchomiony/wstrzymany) uruchomionych w bieżącej sesji programów.
+      ps a
+
+  - Przywróć w tle działanie wstrzymanego sleep.
+	kill -CONT {id_procesu}
+
+  - Sprawdzaj aktywne zadania poleceniem jobs aż do zakończenia sleep 30
+	jobs
+
+  - Zakończ sleep 3600 przywracając go na pierwszy plan i zamykając kombinacją Ctrl-C.
+	fg {identyfikator_z_jobs}
+
+6.Uruchom w tle sekwencję sleep 1000 ; touch sleep_finished. Sprawdź czy istnieje plik sleep_finished. Zakończ proces sleep sygnałem TERM. Sprawdź ponownie istnienie pliku sleep_finished.
+	istnieje
+
+7.Uruchom aplikację z GUI, np. edytor tekstu Mousepad. Sprawdź jego PID. Wyślij do jego procesu sygnał STOP, sprawdź czy aplikacja reaguje. Wyślij sygnał CONT.
+ 	kill -STOP {PID_procesu}
+	kill -CONT {PID_procesu}
+
+8.Utwórz w swoim katalogu domowym folder o nazwie readonly. Usuń prawa do zapisu w nim. Następnie wykonaj komendę, która spróbuje utworzyć w nim plik, a w przypadku niepowodzenia wyświetli komunikat ERROR (polecenie echo ERROR).
+	mkdir readonly
+	chmod 444 readonly
+	touch readonly/xd.txt || echo ERROR
+
+9.Przejdź do katalogu /proc i odczytaj jego zawartość poleceniem ls -l /proc.
+	cd /proc
+	ls -l /proc
+
+10.Porównaj wartości PID procesów wskazywanych po wywołaniu programu ps z nazwami katalogów w folderze /proc. Następnie spróbuj przejść do katalogu o nazwie odpowiadającej PID procesu ps - czy podany katalog nadal istnieje?
+	ps
+	nie
+
+11.Przejdź do podkatalogu w /proc o nazwie odpowiadającej PID procesu bash (uzyskasz go po wpisaniu ps). Przejrzyj jego zawartość i wyświetl zawartość pliku status. Zwróc uwagę na przechowywane informacje (np. Name, State,PID).
+	ps
+	cat status
+
+12.Sprawdź informacje o tym na jakim procesorze obecnie pracujesz. W tym celu odczytaj zawartość pliku cpuinfo poleceniem cat /proc/cpuinfo
+	cat /proc/cpuinfo
+
+13.Sprawdź informacje o wykorzystaniu pamięci RAM. W tym celu odczytaj zawartość pliku meminfo poleceniem cat /proc/meminfo.
+	cat /proc/meminfo
+
+14.Korzystając z Nano zwiększ rozmiar przechowywanej historii bash (wartość HISTSIZE w pliku .bashrc w katalogu domowym)
+	nano .bashrc
+	Ctrl + W -> HISTSIZE
+	Ctrl + X -> Y
+
+15.Korzystając z Vim-a wyedytuj dowolny plik tekstowy.
+	i
+	:x
+
+16.Uruchom w pojedynczej konsoli, w tle trzy edytory nano, dla trzech różnych plików. Sprawdź procesy działające w tle w bieżącym terminalu komendą jobs. Naucz się przywracać wybrany proces na pierwszy plan.
+	sudo chmod 777 /etc/nanorc
+	nano /etc/nanorc
+	unocomment allow nano to suspend
+	nano x.txt
+	Ctrl + Z
+	nano xD.txt
+	Ctrl + Z
+	nano xDD.txt
+	Ctrl + Z
+	jobs
+	bg 1
+
+-- LAB 03 --
+
+1.Wyświetl plik /etc/passwd z podziałem na strony przyjmując, że strona ma 5 linii tekstu. Podpowiedź: sprawdź program more
+	cat /etc/passwd | more -n 5
+
+2.Stwórz pliki tekst1 oraz tekst2, wypełnij kilkoma linijkami tekstu. Korzystając z polecenia cat utwórz plik tekst3, który będzie składał się z zawartości plików tekst1 oraz tekst2.
+	cat > ~/tekst1.txt
+	Nie wiem
+	Ctrl + D
+	cat > ~/tekst2.txt
+	niczego
+	Ctrl + D
+	cat ~/tekst1.txt ~/tekst2.txt > ~/tekst3.txt
+
+3.Wyświetl po 5 pierwszych linii wszystkich plików w swoim katalogu domowym w taki sposób, aby nie były wyświetlane ich nazwy. Podpowiedź: pamiętaj, że z programami, które przyjmują jako argumenty nazwy plików możesz używać wzorców.
+	cat * */* 2>/dev/null | head -n 5
+
+4.Wyświetl linie o numerach 3, 4 i 5 z pliku /etc/passwd
+	cat /etc/passwd | sed -n '3,5p'
+
+5.Wyświetl linie o numerach 7, 6 i 5 licząc od końca pliku /etc/passwd (czyli kolejno 7. od końca, 6. od końca i 5. od końca)
+	cat /etc/passwd | tail -n 7 | head -n 3
+
+6.Wyświetl zawartość /etc/passwd w jednej linii
+	cat /etc/passwd | tr '\n' ' '
+
+7.Za pomocą filtru tr wykonaj modyfikację pliku, polegającą na umieszczeniu każdego słowa (oddzielonych spacją) w osobnej linii. Podpowiedź: aby przekazać znak spacji jako argument, musisz umieścić go w cudzysłowie
+	cat < ~/xD.txt | tr ' ' '\n'
+
+8.Zlicz wszystkie pliki znajdujące się w katalogu /etc i jego podkatalogach
+	find /etc -not -type d 2>/dev/null | wc -l
+
+9.Napisz polecenie zliczające sumę znaków z pierwszych trzech linii pliku /etc/passwd
+	cat /etc/passwd | head -n 3 | wc* -c
+
+10.Wyświetl listę plików z aktualnego katalogu, zamieniając wszystkie małe litery na duże.
+	ls | tr a-z A-Z
+
+11.Wyświetl listę praw dostępu do plików w aktualnym katalogu, ich rozmiar i nazwę
+	ls -l | awk '{print $1 " " $5 " " $9}'
+
+12.Wyświetl listę plików w aktualnym katalogu, posortowaną według rozmiaru pliki 
+	ls -1sp | grep -v / | sort -n -r | grep -oE '[^ ]+$'
+
+13.Wyświetl zawartość pliku /etc/passwd posortowaną wg numerów UID w kolejności od największego do najmniejszego
+	cat /etc/passwd | sort -t ':' -n -k 3 -r
+
+14.Wyświetl zawartość pliku /etc/passwd posortowaną najpierw wg numerów GID w kolejności od największego do najmniejszego, a następnie UID
+	cat /etc/passwd | sort -t ':' -n -k 4 -r -k 3
+
+15.Podaj nazwy trzech najmniejszych plików w katalogu posortowane wg nazwy
+	ls -1sp | grep -v / | sort -n -r | grep -oE '[^ ]+$' | sort | head -3
+
+16.W pliku /etc/services przechowywana jest lista popularnych usług sieciowych, wraz z numerami portów i protokołem. Wylistuj (tylko) nazwy usług, które korzystają z protokołu UDP.
+	cat /etc/services | grep 'udp' | awk '{print $1}'
+
+
+17.Wyświetl, ile wirtualnych terminali (dev/tty) o numerach z zakresu 50-69 znajduje się w systemie.
+	ls /dev/tty* -1 | grep '[5-6][0-9]' | ls /dev/tty* -1 | grep '[5-6][0-9]' | wc -l
+
+18.Zbuduj potok, który wyświetli w terminalu PID procesu cupsd.
+	ps -ax | grep -e 'pts' | grep -e 'cupsd' | awk '{print $1}'
+
+-- LAB 04 --
+
+1.Zdefiniuj zmienną IMIE i przypisz jej swoje imię. Wyświetl zawartość tej zmiennej. Wyeksportuj tą zmienną i sprawdź, czy jest dostępna w nowym (potomnym) interpreterze.
+	IMIE=Adam
+	echo $IMIE
+	en~a
+	Nie jest dostępna w innnym interpreterze
+2.Wyświetl listę zmiennych eksportowanych.
+	env
+
+3.Zmień własny znak zachęty, modyfikując zmienną PS1.
+	PS1="xd: "
+
+4.Napisz skrypt, który dla każdego elementu (pliku, folderu) w bieżącym katalogu wyświetli jego nazwę wraz z informacją czy jest to plik czy katalog.
+                                                        
+#!/bin/bash
+for FILE in ~/*
+do
+ name=$(basename $FILE)
+ if [ -f $FILE ]
+ then
+  echo "$(basename $FILE) -> plik"
+ else
+  echo "$(basename $FILE) -> katalog"
+ fi
+done
+
+5.Napisz skrypt, który dla każdego z plików podanych jako argumenty wywołania wyświetli nazwę pliku, a następnie jego zawartość posortowaną alfabetycznie.
+                                                           
+#!/bin/bash
+for FILE in $*
+do
+ echo  $( cat $FILE | sort )
+done
+
+6.Napisz skrypt, który będzie kopiował plik podany jako pierwszy argument do wszystkich katalogów podanych jako kolejne argumenty wywołania.
+                                                            
+#!/bin/bash
+for ctl in ${@:2}
+do
+ cp $1 $ctl
+done
+
+7.Napisz skrypt, który wykona kopię zapasową plików podanych jako argumenty, do katalogu backup i dopisze do ich nazwy bieżącą datę:
+
+#!/bin/bash
+if [ ! -d ~/backup ]
+then
+ mkdir ~/backup
+fi
+for file in $*
+do
+ cp $file ~/backup/$(basename $file)_$(date '+%Y-%m-%d')
+done
+
+8.Napisz skrypt, który będzie oczekiwał na pojawienie się pliku o nazwie wskazanej w argumencie. Skrypt powinien cyklicznie (co 5 sekund) sprawdzać istnienie pliku. Jeśli plik istnieje, skrypt powinien wyświetlić jego zawartość i zakończyć się. Uruchom skrypt, a z poziomu drugiego terminala utwórz monitorowany plik.
+
+#!/bin/bash
+while ! [ -f $1 ]
+do
+ sleep 5
+done
+cat $1
+
+9.Utwórz skrypt i umieść w nim funkcję realizującą sumę dwóch argumentów (liczb) podawanych do skryptu.
+
+#!/bin/bash
+function sum {
+ echo $(($1+$2))
+}
+sum $1 $2
+
+-- POWTÓRKA --
+
+1.Napisz skrypt, który znajdzie w katalogu podanym jako argument do skryptu wszystkie pliki z rozszerzeniem sh, modyfikowane nie dawniej niż 7 dni temu i nada im prawo do wykonywania.
+
+#!/bin/bash
+find $* -type f -mtime -7 -name "*.sh" -print0 | xargs -0 chmod +x
+
+2.Napisz skrypt który policzy liczbę linii zawierających słowo “color” w pliku ~/.bashrc
+
+#!/bin/bash
+cat ~/.bashrc | grep color | wc -l
+
+3.System linux loguje wiadomości w pliku tekstowym /var/log/kern.log. Wypisz z tego pliku 3 ostatnie zdarzenia dotyczące urządzeń USB.
+
+#!/bin/bash
+cat /var/log/kern.log | grep usb | tail -n 3
+
+4.1.Napisz skrypt, który wypisze ilość bajtów pobraną przez interfejs sieciowy, który pobrał tych danych najwięcej
+
+#!/bin/bash
+ifconfig | grep 'RX packets' | awk '{printf $5 "\n"}' | sort -nr | head -n 1
+
+4.2.Napisz skrypt, który wypisze adresy MAC wszystkich interfejsów sieciowych
+
+#!/bin/bash
+ifconfig | grep -o ..:..:..:..:..:..
+
+5.Napisz skrypt, który stworzy plik raport.txt, zawierający w każdym wierszu nazwę pliku oraz jego sumę kontrolną obliczoną algorytmem md5, dla każdego pliku *.txt w aktualnym katalogu. nazwa pliku i suma kontrolna powinny być oddzielone spacją. Wykorzystaj program md5sum.
+
+#!/bin/bash
+find -maxdepth 1 -type f -exec md5sum {} \; | awk '{$2 = substr($2, 3); printf $1 " " $2 "\n"}' > raport.txt
+
+6.Napisz program weryfikujący integralność plików w katalogu. Dla każdego pliku *.txt w aktualnym katalogu, porównaj jego sumę kontrolną obliczoną za pomocą program/*u md5 z sumą kontrolną zapisaną w pliku raport.txt z zadania poprzedniego, oraz wyświetl ostrzegawczy komunikat w przypadku rozbieżności.
+
+#!/bin/bash
+var=$(find -maxdepth 1 -mindepth 1 -type f -exec md5sum {} \; | awk '{$2 = substr($2, 3); printf $1 " " $2 "\n"}'  | grep -v -e raport.txt -e $0)
+var2=$(cat raport.txt | grep -v -e raport.txt -e $0)
+if [ "$var" != "$var2" ]
+then
+ echo "Error"
+fi
+
+7.Napisz skrypt, który na podstawie pliku wejściowego wskazanego pierwszym argumentem wyświetli nazwy trzech planet o największej liczbie księżycy, w kolejności alfabetycznej.
+
+#!/bin/bash
+cat $1 | sort -n -r -k 4 | head -3 | sort
+
+8.W pliku trees.txt zapisane są w formacie csv informacje o kilku drzewach rosnących w ogrodzie (wraz z nagłówkiem w pierwszej linii, informującym o zawartości kolumn pliku). Napisz skrypt, który zapisze do pliku output.txt 3 wysokości dwóch najwyższych brzóz o statusie “chronione”. (UWAGA błąd w pliku trees.txt)
+
+#!/bin/bash
+cat trees.txt | tail -n +2 | grep chronione | grep brzoza | awk -F',' '{printf $3 "\n"}' | sort -n -r | head -2 > output.txt
+
+9.Napisz skrypt, który sklei zawartość wszystkich plików przekazanych jako argumenty i wypisze w konsoli
+
+#!/bin/bash
+for file in $*
+do
+cat $file|  awk -v vname=$(basename $file) '{ printf vname ": " $1 "\n" }'
+done
+
+10.Napisz skrypt, który zliczy i wypisze sumę znaków we wszystkich plikach podanych jako argumenty wywołania.
+
+#!/bin/bash
+cat $* | tr -d '\n' | wc -c
+
+11.Napisz skrypt, który utworzy w katalogu domowym folder pictures_backup i skopiuje do niego wszystkie pliki z rozszerzeniem jpg znajdujące się w bieżącym katalogu, a następnie zmieni nowym plikom prawa dostępu na tylko do odczytu.
+
+#!/bin/bash
+mkdir ~/pictures_backup
+ls -a | grep "\.jpg"$ | xargs -I{} cp -u {} ~/pictures_backup
+chmod 444 ~/pictures_backup/*
+
+12.Napisz skrypt, który przydzieli plikom odpowiednie prawa dostępu na podstawie par argumentów plik - prawa dostępu w notacji numerycznej.
+
+#!/bin/bash
+while [ $1 ]
+do 
+ chmod $2 $1
+ shift
+ shift
+done
+
+13.Napisz skrypt, który dopisze tekst określony jako pierwszy argument wywołania na końcu wszystkich plików z rozszerzeniem zdefiniowanym jako drugi argument i znajdujących się w bieżącym katalogu.
+
+#!/bin/bash
+for line in *.$2
+do
+ echo $1 >> $line0
+done
+
+14.Napisz skrypt, który zsumuje wielkości plików w bieżącym katalogu dla każdego rozszerzenia podanego jako argument.
+
+#!/bin/bash
+for var in $*
+do
+ ls -l | grep "."$var | awk '{printf $5 "\n"}' | awk -v text=$var '{s+=$1} END {print text ": " s}'
+done
+
+15.Napisz skrypt, który wyświetli pierwszą linię od końca z pliku podanego jako pierwszy argument, drugą linię od końca z pliku podanego jako drugi argument itd. eżeli dany plik jest zbyt krótki, wyświetl stosowny komunikat.
+
+#!/bin/bash
+cat $1 | tail -1
+var=$(wc -l $2 | awk '{printf $1}')
+if [ $var -gt 1 ]
+ then
+ cat $2 | tail -2 | head -1
+ else
+ echo "Plik drugi ma z mało linii
+fi
+
+16.Napisz skrypt przyjmujący dwa argumenty - dwie nazwy plikow, który porówna zawartość tych dwóch plików tekstowych. Jeżeli zawartość obu plików jest jednakowa skrypt powinien wypisać wiadomość: pliki jednakowe Jeżeli pliki są różne, skrypt powinien wypisać który z nich ma więcej linii, np.: plik1.txt ma więcej linii niż plik2.txt
+Do porównania zawartości plików możesz wykorzystać komendę diff plik1.txt plik2.txt
+
+#!/bin/bash
+t1=$(cat $1)
+t2=$(cat $2)
+if [ "$t1" == "$t2" ]
+then
+ echo "pliki jednakowe"
+else
+ l1=$(cat $1 | wc -l)
+ l2=$(cat $2 | wc -l)
+ if [ "$l1" -gt "$l2" ]
+ then
+  echo "plik $1 ma wiecej linii niz $2"
+ elif [ "$l1" -lt "$l2" ]
+ then
+  echo "plik $2 ma wiecej linii niz $1"
+ else
+  echo "pliki maja tyle samo linii ale sie roznia"
+ fi
+fi
+
+17.Stwórz w pustym katalogu 3 pliki: plik1.txt, plik2.txt oraz plik3.txt. Umieść w każdym kilka słów. Napisz skrypt, który zamieni nazwy wszystkich plików w tym katalogu na liczbę znaków w danym pliku.
+
+#!/bin/bash
+for file in $*
+do
+ count=$(cat $file | wc -w) 
+ path=$(dirname $file)"/"$count
+ mv $file $path
+done
+
+18.Napisz skrypt, który w pętli wczytuje z klawiatury numer (PID) procesu, numer sygnału a następnie wysyła wskazany sygnał do określonego procesu. Wpisanie słowa EXIT kończy pracę skryptu.
+
+#!/bin/bash
+while true
+do
+ read -p "Enter PID: " pid
+ if [ "$pid" == "EXIT" ]
+ then
+  break
+ elif [ "$pid" ]
+ then
+  kill -STOP $pid 
+ fi
+done
+
+19.Napisz skrypt zmieniający rekursywnie nazwę każdego katalogu (pomijając pliki!) na wielkie litery.
+
+#!/bin/bash
+var1=$(find $1 -type d | sort -n -r)
+for dir in $var1
+do 
+ var2=$(basename $dir | tr a-z A-Z)
+ var3=$(dirname $dir)
+ var5=$(echo $var3"/"$var2)
+ mv $dir $var5 
+done
+
+20.UUID (universally unique identifier) lub GUID jest to identyfikator globalnie unikatowy – identyfikator obiektów między innymi w systemie Windows lub wszędzie, gdzie potrzebny jest unikatowy identyfikator
+
+#!/bin/bash
+for i in {1..10}
+do
+ uuidgen
+done | sort > id.txt
+
+21.
+
+#!/bin/bash
+function fib(){
+ if (( $1 <= 0 ))
+  then
+   echo 1
+  else 
+   echo $(( $(fib $(($1-1)) ) + $(fib $(($1-2)) ) ))
+ fi
+}
+read -p "Enter number: " val2
+val=$(fib $val2)
+echo $val
+
+
+-- TESTOWY TEST --
+
+1.Napisz skrypt, który utworzy w bieżącym katalogu folder photos, a następnie przeniesie do niego wszystkie plik z rozszerzeniami jpg i png znajdujące się w bieżącym katalogu. Przeniesionym plikom ustaw prawa dostępu na tylko do odczytu. (na potrzby własnych testów utwórz samodzielnie kilka plików jpg i png) 
+
+#!/bin/bash
+var="photos"
+mkdir $var
+ls -a | grep -e "\.jpg"$ -e "\.png"$| xargs -I{} mv -u {} $var
+chmod 444 $var/*
+
+2.W pliku cars.txt zapisane są dane samochodów w formacie rok;model;prędkość. Wyświetl w jednej linii nazwy samochodów posortowane rosnąco wg prędkości, oddzielone przecinkami. Przekaż plik cars.txt jako argument do skryptu.
+
+#!/bin/bash
+cat $1 | sort -k 3 -r | awk -F ';' 'a++{printf ","}{printf $2} END {print ""}'
+
+3.Napisz skrypt, który będzie zliczał plików i katalogów, które znajdują się w podanym katalogu (argument do skryptu), bez zliczania w podkatalogach. Jeśli argument nie został podany zliczanie ma dotyczyć katalogu bieżącego. Przykład:
+
+#!/bin/bash
+find $1 -maxdepth 1 -mindepth 1 -type d | wc -l | awk -v text=$1 '{printf "Liczba katalogow w katalogu " text " = " $1 "\n"}'
+find $1 -maxdepth 1 -mindepth 1 -not -type d | wc -l | awk -v text=$1 '{printf "Liczba plikow w katalogu " text " = " $1 "\n"}'
+find $1 -maxdepth 1 -mindepth 1 | wc -l | awk '{printf "Suma = " $1 "\n"}
+
+-- TEST SKRYPTU --
+
+1. Napisz skrypt, który zwróci liczbę wystąpień wybranego słowa w zadanym pliku. Zarówno słowo jak i lokalizacja pliku przekazywane są jako argumenty do skryptu. Słowo może następować lub poprzedzać dowolny inny ciąg znaków i może wystąpić więcej niż raz w jednej linii, np.
+
+#!/bin/bash
+cat $2 | grep -o $1 | wc -w
