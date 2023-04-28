@@ -1,6 +1,7 @@
-# Linux commands Q&A for SCR in PP on AiR
+# Bash example tasks
 
 ## Lab 1
+
 <details>
 <summary>Expand!</summary>
 
@@ -69,35 +70,35 @@
 		
 	</details>	
 
-7. Create directory kat1 in your home directory.
+7. Create directory cat1 in your home directory.
 	
 	<details>
 	<summary>Answer</summary>
 		
 	```
-	mkdir ~/kat1
+	mkdir ~/cat1
 	```
 		
 	</details>
 		
-8. In directory kat1, create a directory structure with one command: kat2/kat3/kat4.
+8. In directory cat1, create a directory structure with one command: cat2/cat3/cat4.
 	
 	<details>
 	<summary>Answer</summary>
 		
 	```
-	mkdir -p ~/kat1/kat2/kat3/kat4
+	mkdir -p ~/cat1/cat2/cat3/cat4
 	```
 		
 	</details>
 	
-9. Delete the entire directory structure of kat3/kat4 in one command.
+9. Delete the entire directory structure of cat3/cat4 in one command.
 	
 	<details>
 	<summary>Answer</summary>
 		
 	```
-	rm -r ~/kat1/kat2/kat3
+	rm -r ~/cat1/cat2/cat3
 	```
 		
 	</details>
@@ -113,13 +114,13 @@
 		
 	</details>
 	
-11. Copy all the files from the home directory with the extension .txt to the directory kat1 with one command.
+11. Copy all the files from the home directory with the extension .txt to the directory cat1 with one command.
 	
 	<details>
 	<summary>Answer</summary>
 		
 	```
-	cp ./*.txt ~/kat1
+	cp ./*.txt ~/cat1
 	```
 		
 	</details>
@@ -130,23 +131,23 @@
 	<summary>Answer</summary>
 		
 	```
-	cp ./*.c ~/kat1/kat2
+	cp ./*.c ~/cat1/cat2
 	```
 		
 	</details>
 	
-13. Copy the entire directory structure of kat1 creating an analogous structure called kat1b.
+13. Copy the entire directory structure of kat1 creating an analogous structure called cat1b.
 	
 	<details>
 	<summary>Answer</summary>
 		
 	```
-	cp -r ~/kat1 ~/kat1b
+	cp -r ~/cat1 ~/cat1b
 	```
 		
 	</details>
 	
-14. Delete all files in kat1/kat2.
+14. Delete all files in cat1/cat2.
 	
 	<details>
 	<summary>Answer</summary>
@@ -157,35 +158,35 @@
 		
 	</details>
 
-15. Delete the entire directory structure of kat1b with one command.
+15. Delete the entire directory structure of cat1b with one command.
 	
 	<details>
 	<summary>Answer</summary>
 		
 	```
-	rm -r ~/kat1b
+	rm -r ~/cat1b
 	```
 		
 	</details>
 	
-16. Rename any file in directory kat1.
+16. Rename any file in directory cat1.
 	
 	<details>
 	<summary>Answer</summary>
 		
 	```
-	mv ~/kat1/x.txt ~/kat1/xx.txt
+	mv ~/cat1/x.txt ~/cat1/xx.txt
 	```
 		
 	</details>	
 
-17. Move the directory kat1/kat2 to your home directory, thus creating the directory kat2b.
+17. Move the directory cat1/cat2 to your home directory, thus creating the directory cat2b.
 	
 	<details>
 	<summary>Answer</summary>
 		
 	```
-	mv ~/kat1 ~/kat2b
+	mv ~/cat1 ~/cat2b
 	```
 		
 	</details>	
@@ -212,101 +213,101 @@
 	
 	</details>	
 
-20. Copy all regular files between 10 and 100 bytes from /usr/bin to kat1/kat2 (use the find command with the -exec parameter).
+20. Copy all regular files between 10 and 100 bytes from /usr/bin to cat1/cat2 (use the find command with the -exec parameter).
 	
 	<details>
 	<summary>Answer</summary>
 	
 	```
-	find /usr/bin -size +10 -size -100 -exec cp {} ~/kat1/kat2 \;
+	find /usr/bin -size +10 -size -100 -exec cp {} ~/cat1/cat2 \;
 	```
 	
 	</details>
 	
-21. In your home directory, create a file named plik.txt - check the access rights to it.
+21. In your home directory, create a file named file.txt - check the access rights to it.
 	
 	<details>
 	<summary>Answer</summary>
 		
 	```
-	touch ~/plik.txt | ls -l ~
+	touch ~/file.txt | ls -l ~
 	```
 		
 	</details>
 	
-22. For plik.txt, add write access for other users.
+22. For file.txt, add write access for other users.
 	
 	<details>
 	<summary>Answer</summary>
 		
 	```
-	chmod a+w ~/plik.txt
+	chmod a+w ~/file.txt
 	```
 		
 	</details>
 	
-23. For plik.txt, subtract the owner's write permission.
+23. For file.txt, subtract the owner's write permission.
 	
 	<details>
 	<summary>Answer</summary>
 		
 	```
-	chmod u-w ~/plik.txt
+	chmod u-w ~/file.txt
 	```
 	
 	</details>
 	
-24. For plik.txt, add execute permission for all users.
+24. For file.txt, add execute permission for all users.
 	
 	<details>
 	<summary>Answer</summary>
 		
 	```
-	chmod +x ~/plik.txt
+	chmod +x ~/file.txt
 	```
 
 	</details>
 	
-25. For file plik.txt and all users, allow only file read.
+25. For file file.txt and all users, allow only file read.
 	
 	<details>
 	<summary>Answer</summary>
 		
 	```
-	chmod 444 ~/plik.txt
+	chmod 444 ~/file.txt
 	```
 		
 	</details>
 
-26. For file plik.txt, restore the original rights using numerical notation.
+26. For file file.txt, restore the original rights using numerical notation.
 	
 	<details>
 	<summary>Answer</summary>
 	
 	```
-	chmod 664 ~/plik.txt
+	chmod 664 ~/file.txt
 	```
 	
 	</details>
 
-27. Create a link to plik.txt named plik2.txt in your home directory.
+27. Create a link to file.txt named file2.txt in your home directory.
 	
 	<details>
 	<summary>Answer</summary>
 		
 	```
-	ln ~/plik.txt ~/plik2.txt
+	ln ~/file.txt ~/file2.txt
 	```
 	
 	</details>
 
-28. Create a symbolic link to directory kat1/kat2 named abc in your home directory.
+28. Create a symbolic link to directory file1/file2 named abc in your home directory.
 	
 	<details>
 	<summary>Answer</summary>
 		
 	```
-	ln -s ~/kat1/kat2 ~/abc
+	ln -s ~/file1/file2 ~/abc
 	```
 	
 	</details>
@@ -324,7 +325,8 @@
 	
 </details>
 	
-## Lab 02
+## Lab 2
+
 <details>
 <summary>Expand!</summary>
 
@@ -542,7 +544,7 @@
 	```
 	ps
 	cat status
-	``
+	```
 	
 	</details>
 
@@ -584,6 +586,7 @@
 	</details>
 
 15. Using Vim, edit any text file.
+
 	<details>
 	<summary>Answer</summary>
 	
@@ -635,365 +638,773 @@
 
 </details>
 	
+## Lab 3
 
 <details>
-<summary>TODO</summary>
+<summary>Expand!</summary>
+
+1. Paginate the /etc/passwd file, assuming the page has 5 lines of text. Hint: check out more
+
+	<details>
+	<summary>Answer</summary>
 	
--- LAB 03 --
-
-1.Wyświetl plik /etc/passwd z podziałem na strony przyjmując, że strona ma 5 linii tekstu. Podpowiedź: sprawdź program more
+	```
 	cat /etc/passwd | more -n 5
+	```
+	
+	</details>
+	
 
-2.Stwórz pliki tekst1 oraz tekst2, wypełnij kilkoma linijkami tekstu. Korzystając z polecenia cat utwórz plik tekst3, który będzie składał się z zawartości plików tekst1 oraz tekst2.
-	cat > ~/tekst1.txt
-	Nie wiem
-	Ctrl + D
-	cat > ~/tekst2.txt
-	niczego
-	Ctrl + D
-	cat ~/tekst1.txt ~/tekst2.txt > ~/tekst3.txt
+2. Create text1 and text2 files, fill them with a few lines of text. Using the cat command, create a text3 file, which will consist of the contents of the text1 and text2 files.
+	
+	<details>
+	<summary>Answer</summary>
+	
+	```
+	xD > ~/xD.txt | D > ~/xDD.txt | cat ~/xD.txt ~/xDD.txt > xDDD.txt
+	```
+	
+	</details>
 
-3.Wyświetl po 5 pierwszych linii wszystkich plików w swoim katalogu domowym w taki sposób, aby nie były wyświetlane ich nazwy. Podpowiedź: pamiętaj, że z programami, które przyjmują jako argumenty nazwy plików możesz używać wzorców.
+3. Display the first 5 lines of all files in your home directory so that their names are not displayed. Hint: remember that you can use patterns with programs that take filenames as arguments.
+
+	<details>
+	<summary>Answer</summary>
+
+	```
 	cat * */* 2>/dev/null | head -n 5
+	```
+	
+	</details>
 
-4.Wyświetl linie o numerach 3, 4 i 5 z pliku /etc/passwd
+4. List lines 3, 4, and 5 of the /etc/passwd file
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	cat /etc/passwd | sed -n '3,5p'
+	```
+	
+	</details>
 
-5.Wyświetl linie o numerach 7, 6 i 5 licząc od końca pliku /etc/passwd (czyli kolejno 7. od końca, 6. od końca i 5. od końca)
+5. Display lines 7, 6 and 5 counting from the end of the /etc/passwd file (i.e. 7th, 6th, and 5th, respectively)
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	cat /etc/passwd | tail -n 7 | head -n 3
+	```
+	
+	</details>
 
-6.Wyświetl zawartość /etc/passwd w jednej linii
+6. Display the contents of /etc/passwd on one line
+
+	<details>
+	<summary>Answer</summary>
+
+	```
 	cat /etc/passwd | tr '\n' ' '
+	```
+	
+	</details>
 
-7.Za pomocą filtru tr wykonaj modyfikację pliku, polegającą na umieszczeniu każdego słowa (oddzielonych spacją) w osobnej linii. Podpowiedź: aby przekazać znak spacji jako argument, musisz umieścić go w cudzysłowie
+7. Use the tr filter to modify the file by placing each word (separated by a space) on a separate line. Hint: to pass a space character as an argument, you must put it in quotes
+
+	<details>
+	<summary>Answer</summary>
+
+	```
 	cat < ~/xD.txt | tr ' ' '\n'
+	```
+	
+	</details>
 
-8.Zlicz wszystkie pliki znajdujące się w katalogu /etc i jego podkatalogach
+8. Count all the files in the /etc directory and its subdirectories
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	find /etc -not -type d 2>/dev/null | wc -l
+	```
+	
+	</details>
 
-9.Napisz polecenie zliczające sumę znaków z pierwszych trzech linii pliku /etc/passwd
+9. Write a command that counts the sum of the first three lines of the /etc/passwd file
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	cat /etc/passwd | head -n 3 | wc* -c
+	```
+	
+	</details>
 
-10.Wyświetl listę plików z aktualnego katalogu, zamieniając wszystkie małe litery na duże.
+10. List the files in the current directory, converting all lowercase letters to uppercase.
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	ls | tr a-z A-Z
+	```
+	
+	</details>
 
-11.Wyświetl listę praw dostępu do plików w aktualnym katalogu, ich rozmiar i nazwę
+11. List the access rights of files in the current directory, their size and name
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	ls -l | awk '{print $1 " " $5 " " $9}'
+	```
+	
+	</details>
 
-12.Wyświetl listę plików w aktualnym katalogu, posortowaną według rozmiaru pliki 
+12. Display a list of files in the current directory, sorted by file size
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	ls -1sp | grep -v / | sort -n -r | grep -oE '[^ ]+$'
+	```
+	
+	</details>
 
-13.Wyświetl zawartość pliku /etc/passwd posortowaną wg numerów UID w kolejności od największego do najmniejszego
+13. Display the contents of the /etc/passwd file sorted by UID numbers in order from largest to smallest
+	
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	cat /etc/passwd | sort -t ':' -n -k 3 -r
+	```
+	
+	</details>
 
-14.Wyświetl zawartość pliku /etc/passwd posortowaną najpierw wg numerów GID w kolejności od największego do najmniejszego, a następnie UID
+14. Display the contents of the /etc/passwd file sorted first by GID numbers in order from largest to smallest, then UID
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	cat /etc/passwd | sort -t ':' -n -k 4 -r -k 3
+	```
+	
+	</details>
 
-15.Podaj nazwy trzech najmniejszych plików w katalogu posortowane wg nazwy
+15. Enter the names of the three smallest files in the directory sorted by name
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	ls -1sp | grep -v / | sort -n -r | grep -oE '[^ ]+$' | sort | head -3
+	```
+	
+	</details>
 
-16.W pliku /etc/services przechowywana jest lista popularnych usług sieciowych, wraz z numerami portów i protokołem. Wylistuj (tylko) nazwy usług, które korzystają z protokołu UDP.
+16. The /etc/services file stores a list of popular network services, along with port numbers and protocol. List (only) the names of services that use UDP.
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	cat /etc/services | grep 'udp' | awk '{print $1}'
+	```
+	
+	</details>
 
 
-17.Wyświetl, ile wirtualnych terminali (dev/tty) o numerach z zakresu 50-69 znajduje się w systemie.
+17. View how many virtual terminals (dev/tty) numbered 50-69 are in the system.
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	ls /dev/tty* -1 | grep '[5-6][0-9]' | ls /dev/tty* -1 | grep '[5-6][0-9]' | wc -l
+	```
+	
+	</details>
 
-18.Zbuduj potok, który wyświetli w terminalu PID procesu cupsd.
+18. Build a pipeline that displays the cupsd process's PID in the terminal.
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	ps -ax | grep -e 'pts' | grep -e 'cupsd' | awk '{print $1}'
+	```
+	
+	</details>
+	
+</details>
 
--- LAB 04 --
+## Lab 4
 
-1.Zdefiniuj zmienną IMIE i przypisz jej swoje imię. Wyświetl zawartość tej zmiennej. Wyeksportuj tą zmienną i sprawdź, czy jest dostępna w nowym (potomnym) interpreterze.
-	IMIE=Adam
-	echo $IMIE
-	en~a
-	Nie jest dostępna w innnym interpreterze
-2.Wyświetl listę zmiennych eksportowanych.
+<details>
+<summary>Expand!</summary>
+
+1. Define the NAME variable and assign your name to it. Display the contents of this variable. Export this variable and check if it is available in the new (child) interpreter.
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
+	NAME=John
+	echo $NAME
+	export $NAME
+	```
+	It is not available in any other interpreter
+	
+	</details>
+	
+2. Display the list of exported variables.
+	
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	env
+	```
+	
+	</details>
 
-3.Zmień własny znak zachęty, modyfikując zmienną PS1.
+3. Change your own prompt by modifying the PS1 variable.
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	PS1="xd: "
+	```
+	
+	</details>
+
+4. Write a script that for each element (file, folder) in the current directory will display its name along with information whether it is a file or a directory.
+ 
+	<details>
+	<summary>Answer</summary>
+	
+	```	
+	#!/bin/bash
+	for FILE in ~/*
+	do
+	 name=$(basename $FILE)
+	 if [ -f $FILE ]
+	 then
+	  echo "$(basename $FILE) -> file"
+	 else
+	  echo "$(basename $FILE) -> folder"
+	 fi
+	done
+	```
+	
+	</details>
+
+5. Write a script that for each of the files given as arguments to the call will display the name of the file, and then its contents sorted alphabetically.
+
+	<details>
+	<summary>Answer</summary>
+
+	```
+	#!/bin/bash
+	for FILE in $*
+	do
+	 echo  $( cat $FILE | sort )
+	done
+	```
+	
+	</details>
+
+6. Write a script that will copy the file given as the first argument to all directories given as the subsequent arguments of the call.
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
+	#!/bin/bash
+	for ctl in ${@:2}
+	do
+	 cp $1 $ctl
+	done
+	```
+	
+	</details>
+
+7. Write a script that will back up the files given as arguments to the backup directory and append the current date to their names:
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
+	#!/bin/bash
+	if [ ! -d ~/backup ]
+	then
+	 mkdir ~/backup
+	fi
+	for file in $*
+	do
+	 cp $file ~/backup/$(basename $file)_$(date '+%Y-%m-%d')
+	done
+	```
+	
+	</details>
+
+8. Write a script that will wait for the appearance of the file with the name indicated in the argument. The script should periodically (every 5 seconds) check the existence of the file. If the file exists, the script should display its contents and exit. Run the script and create a monitored file from the second terminal.
+
+	<details>
+	<summary>Answer</summary>
+
+	```
+	#!/bin/bash
+	while ! [ -f $1 ]
+	do
+	 sleep 5
+	done
+	cat $1
+	```
+	
+	</details>
+
+9. Create a script and place in it a function that implements the sum of two arguments (numbers) given to the script.
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
+	#!/bin/bash
+	function sum {
+	 echo $(($1+$2))
+	}
+	sum $1 $2
+	```
+	
+	</details>
+
+</details>
+
+## Repetition
+
+<details>
+<summary>Expand!</summary>
+
+1. Write a script that will find in the directory given as an argument to the script all files with the sh extension, modified not more than 7 days ago and will grant them the right to execute.
+
+	<details>
+	<summary>Answer</summary>
+
+	```
+	#!/bin/bash
+	find $* -type f -mtime -7 -name "*.sh" -print0 | xargs -0 chmod +x
+	```
+	
+	</details>
+	
+2. Napisz skrypt który policzy liczbę linii zawierających słowo “color” w pliku ~/.bashrc
+
+	<details>
+	<summary>Answer</summary>
+
+	```
+	#!/bin/bash
+	cat ~/.bashrc | grep color | wc -l
+	```
+	
+	</details>
+
+3. The linux system logs messages in the text file /var/log/kern.log. List the last 3 USB device events from this file.
+
+	<details>
+	<summary>Answer</summary>
+
+	```
+	#!/bin/bash
+	cat /var/log/kern.log | grep usb | tail -n 3
+	```
+	
+	</details>
+
+4. Write a script that will print the number of bytes downloaded by the network interface that has downloaded the most data
+
+	<details>
+	<summary>Answer</summary>
+
+	```
+	#!/bin/bash
+	ifconfig | grep 'RX packets' | awk '{printf $5 "\n"}' | sort -nr | head -n 1
+	```
+
+	</details>
+
+4. Write a script that lists the MAC addresses of all network interfaces
+
+	<details>
+	<summary>Answer</summary>
+
+	```
+	#!/bin/bash
+	ifconfig | grep -o ..:..:..:..:..:..
+	```
+	
+	</details>
+
+5. Write a script that will create a report.txt file containing the name of the file in each line and its checksum calculated with the md5 algorithm for each *.txt file in the current directory. filename and checksum should be separated by a space. Use md5sum.
+
+	<details>
+	<summary>Answer</summary>
+
+	```
+	#!/bin/bash
+	find -maxdepth 1 -type f -exec md5sum {} \; | awk '{$2 = substr($2, 3); printf $1 " " $2 "\n"}' > raport.txt
+	```
+	
+	</details>
+
+6. Write a program to verify the integrity of files in a directory. For each *.txt file in the current directory, compare its checksum calculated with program/*u md5 with the checksum written in the report.txt file from the previous task, and display a warning message in case of discrepancies.
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
+	#!/bin/bash
+	var=$(find -maxdepth 1 -mindepth 1 -type f -exec md5sum {} \; | awk '{$2 = substr($2, 3); printf $1 " " $2 "\n"}'  | grep -v -e raport.txt -e $0)
+	var2=$(cat raport.txt | grep -v -e raport.txt -e $0)
+	if [ "$var" != "$var2" ]
+	then
+	 echo "Error"
+	fi
+	```
+	
+	</details>
+
+7. Write a script that, based on the input file indicated by the first argument, will display the names of the three planets with the most moons, in alphabetical order.
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
+	#!/bin/bash
+	cat $1 | sort -n -r -k 4 | head -3 | sort
+	```
+	
+	</details>
+
+8. The trees.txt file contains information about several trees growing in the garden in the csv format (along with the header in the first line, informing about the content of the file's columns). Write a script that will write to the output.txt file 3 the heights of the two tallest birch trees with the “protected” status. (NOTE error in trees.txt file)
+
+	<details>
+	<summary>Answer</summary>
+
+	```
+	#!/bin/bash
+	cat trees.txt | tail -n +2 | grep chronione | grep brzoza | awk -F',' '{printf $3 "\n"}' | sort -n -r | head -2 > output.txt
+	```
+	
+	</details>
+
+9. Write a script that will concatenate the contents of all files passed as arguments and output to the console
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
+	#!/bin/bash
+	for file in $*
+	do
+	cat $file|  awk -v vname=$(basename $file) '{ printf vname ": " $1 "\n" }'
+	done
+	```
+	
+	</details>
+	
+
+10. Write a script that will count and print the sum of characters in all files given as call arguments.
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
+	#!/bin/bash
+	cat $* | tr -d '\n' | wc -c
+	```
+	
+	</details>
+
+11. Write a script that will create a pictures_backup folder in your home directory and copy all .jpg files in the current directory to it, and then make the new files read-only.
+
+	<details>
+	<summary>Answer</summary>
+
+	```
+	#!/bin/bash
+	mkdir ~/pictures_backup
+	ls -a | grep "\.jpg"$ | xargs -I{} cp -u {} ~/pictures_backup
+	chmod 444 ~/pictures_backup/*
+	```
+
+	</details>
+
+12. Write a script that assigns the appropriate access rights to files based on the file - access rights argument pairs in numeric notation.
+
+	<details>
+	<summary>Answer</summary>
+
+	```
+	#!/bin/bash
+	while [ $1 ]
+	do 
+	 chmod $2 $1
+	 shift
+	 shift
+	done
+	```
+	
+	</details>
+
+13. Write a script that appends the text specified as the first argument to the end of all files with the extension defined as the second argument and located in the current directory.
+
+	<details>
+	<summary>Answer</summary>
+
+	```
+	#!/bin/bash
+	for line in *.$2
+	do
+	 echo $1 >> $line0
+	done
+	```
+
+	</details>
+
+14. Write a script that sums up the size of files in the current directory for each extension given as an argument.
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
+	#!/bin/bash
+	for var in $*
+	do
+	 ls -l | grep "."$var | awk '{printf $5 "\n"}' | awk -v text=$var '{s+=$1} END {print text ": " s}'
+	done
+	```
+	
+	</details>
+
+15. Write a script that will display the first line from the end of the file given as the first argument, the second line from the end of the file given as the second argument, etc. if the file is too short, display an appropriate message.
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
+	#!/bin/bash
+	cat $1 | tail -1
+	var=$(wc -l $2 | awk '{printf $1}')
+	if [ $var -gt 1 ]
+	 then
+	 cat $2 | tail -2 | head -1
+	 else
+	 echo "The second file has few lines"
+	fi
+	```
+	
+	</details>
+
+16. Write a script that takes two arguments - two filenames, which will compare the contents of these two text files. If the content of both files is the same, the script should print the message: files are the same If the files are different, the script should print which of them has more lines, e.g.: file1.txt has more lines than file2.txt. You can use the diff file1.txt file2.txt command to compare the contents of the files
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
+	#!/bin/bash
+	t1=$(cat $1)
+	t2=$(cat $2)
+	if [ "$t1" == "$t2" ]
+	then
+	 echo "identical files"
+	else
+	 l1=$(cat $1 | wc -l)
+	 l2=$(cat $2 | wc -l)
+	 if [ "$l1" -gt "$l2" ]
+	 then
+	  echo "file $1 has more lines than $2"
+	 elif [ "$l1" -lt "$l2" ]
+	 then
+	  echo "file $2 has more lines than $1"
+	 else
+	  echo "the files have the same lines but they are different"
+	 fi
+	fi
+	```
+	
+	</details>
+
+17. Create 3 files in the empty directory: file1.txt, file2.txt and file3.txt. Put a few words in each. Write a script that converts the names of all files in this directory to the number of characters in the file.
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
+	#!/bin/bash
+	for file in $*
+	do
+	 count=$(cat $file | wc -w) 
+	 path=$(dirname $file)"/"$count
+	 mv $file $path
+	done
+	```
+	
+	</details>
+
+18. Write a script that reads the process number (PID) and signal number from the keyboard in a loop and then sends the indicated signal to a specific process. Entering the word EXIT ends the script.
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
+	#!/bin/bash
+	while true
+	do
+	 read -p "Enter PID: " pid
+	 if [ "$pid" == "EXIT" ]
+	 then
+	  break
+	 elif [ "$pid" ]
+	 then
+	  kill -STOP $pid 
+	 fi
+	done
+	```
+	
+	</details>
+
+19. Write a script that recursively renames each directory (except files!) to uppercase.
+
+	<details>
+	<summary>Answer</summary>
+
+	```
+	#!/bin/bash
+	var1=$(find $1 -type d | sort -n -r)
+	for dir in $var1
+	do 
+	 var2=$(basename $dir | tr a-z A-Z)
+	 var3=$(dirname $dir)
+	 var5=$(echo $var3"/"$var2)
+	 mv $dir $var5 
+	done
+	```
+	
+	</details>
+
+20. UUID (universally unique identifier) or GUID is a globally unique identifier - the identifier of objects, among others, in Windows or wherever a unique identifier is needed
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
+	#!/bin/bash
+	for i in {1..10}
+	do
+	 uuidgen
+	done | sort > id.txt
+	```
+	
+	</details>
+
+21. Write a script that asks the user for the number (index) of a word from the Fibonacci sequence and saves this value to a variable. In the script, add a function that uses recursion to calculate the given string term. Display the calculated value in the terminal.
+
+	<details>
+	<summary>Answer</summary>
+
+	```
+	#!/bin/bash
+	function fib(){
+	 if (( $1 <= 0 ))
+	  then
+	   echo 1
+	  else 
+	   echo $(( $(fib $(($1-1)) ) + $(fib $(($1-2)) ) ))
+	 fi
+	}
+	read -p "Enter number: " val2
+	val=$(fib $val2)
+	echo $val
+	```
+	
+	</details>
+
+</details>
+
+## Example test
+
+<details>
+<summary>Expand!</summary>
+
+1. Write a script that will create a photos folder in the current directory, and then move all files with .jpg and .png extensions in the current directory to it. Set the permissions of the transferred files to read-only. (for your own tests, create a few jpg and png files yourself)
+
+	<details>
+	<summary>Answer</summary>
+
+	```
+	#!/bin/bash
+	var="photos"
+	mkdir $var
+	ls -a | grep -e "\.jpg"$ -e "\.png"$| xargs -I{} mv -u {} $var
+	chmod 444 $var/*
+	```
+	
+	</details>
+
+2. The cars.txt file contains car data in the format year;model;speed. Display car names in one line sorted by speed, separated by commas. Pass the cars.txt file as an argument to the script.
+
+	<details>
+	<summary>Answer</summary>
+
+	```
+	#!/bin/bash
+	cat $1 | sort -k 3 -r | awk -F ';' 'a++{printf ","}{printf $2} END {print ""}'
+	```
+	
+	</details>
+
+3. Write a script that will count files and directories that are in the given directory (script argument), without counting in subdirectories. If the argument is not given, the count is to refer to the current directory.
+
+
+	<details>
+	<summary>Answer</summary>
+	
+	```
+	#!/bin/bash
+	find $1 -maxdepth 1 -mindepth 1 -type d | wc -l | awk -v text=$1 '{printf "Number of directories in directory " text " = " $1 "\n"}'
+	find $1 -maxdepth 1 -mindepth 1 -not -type d | wc -l | awk -v text=$1 '{printf "Number of files in directory " text " = " $1 "\n"}'
+	find $1 -maxdepth 1 -mindepth 1 | wc -l | awk '{printf "Sum = " $1 "\n"}
+	```
+	
+	</details>
+
+</details>
+
+## Test script
+
+<details>
+<summary>Expand!</summary>
+
+1. Write a script that will return the number of occurrences of a given word in a given file. Both the word and the file location are passed as arguments to the script. A word can follow or precede any other sequence of characters and can occur more than once on a single line, e.g.
+
+	<details>
+	<summary>Answer</summary>
+
+	```
+	#!/bin/bash
+	cat $2 | grep -o $1 | wc -w
+	```
+	
+	</details>
 
-4.Napisz skrypt, który dla każdego elementu (pliku, folderu) w bieżącym katalogu wyświetli jego nazwę wraz z informacją czy jest to plik czy katalog.
-                                                        
-#!/bin/bash
-for FILE in ~/*
-do
- name=$(basename $FILE)
- if [ -f $FILE ]
- then
-  echo "$(basename $FILE) -> plik"
- else
-  echo "$(basename $FILE) -> katalog"
- fi
-done
-
-5.Napisz skrypt, który dla każdego z plików podanych jako argumenty wywołania wyświetli nazwę pliku, a następnie jego zawartość posortowaną alfabetycznie.
-                                                           
-#!/bin/bash
-for FILE in $*
-do
- echo  $( cat $FILE | sort )
-done
-
-6.Napisz skrypt, który będzie kopiował plik podany jako pierwszy argument do wszystkich katalogów podanych jako kolejne argumenty wywołania.
-                                                            
-#!/bin/bash
-for ctl in ${@:2}
-do
- cp $1 $ctl
-done
-
-7.Napisz skrypt, który wykona kopię zapasową plików podanych jako argumenty, do katalogu backup i dopisze do ich nazwy bieżącą datę:
-
-#!/bin/bash
-if [ ! -d ~/backup ]
-then
- mkdir ~/backup
-fi
-for file in $*
-do
- cp $file ~/backup/$(basename $file)_$(date '+%Y-%m-%d')
-done
-
-8.Napisz skrypt, który będzie oczekiwał na pojawienie się pliku o nazwie wskazanej w argumencie. Skrypt powinien cyklicznie (co 5 sekund) sprawdzać istnienie pliku. Jeśli plik istnieje, skrypt powinien wyświetlić jego zawartość i zakończyć się. Uruchom skrypt, a z poziomu drugiego terminala utwórz monitorowany plik.
-
-#!/bin/bash
-while ! [ -f $1 ]
-do
- sleep 5
-done
-cat $1
-
-9.Utwórz skrypt i umieść w nim funkcję realizującą sumę dwóch argumentów (liczb) podawanych do skryptu.
-
-#!/bin/bash
-function sum {
- echo $(($1+$2))
-}
-sum $1 $2
-
--- POWTÓRKA --
-
-1.Napisz skrypt, który znajdzie w katalogu podanym jako argument do skryptu wszystkie pliki z rozszerzeniem sh, modyfikowane nie dawniej niż 7 dni temu i nada im prawo do wykonywania.
-
-#!/bin/bash
-find $* -type f -mtime -7 -name "*.sh" -print0 | xargs -0 chmod +x
-
-2.Napisz skrypt który policzy liczbę linii zawierających słowo “color” w pliku ~/.bashrc
-
-#!/bin/bash
-cat ~/.bashrc | grep color | wc -l
-
-3.System linux loguje wiadomości w pliku tekstowym /var/log/kern.log. Wypisz z tego pliku 3 ostatnie zdarzenia dotyczące urządzeń USB.
-
-#!/bin/bash
-cat /var/log/kern.log | grep usb | tail -n 3
-
-4.1.Napisz skrypt, który wypisze ilość bajtów pobraną przez interfejs sieciowy, który pobrał tych danych najwięcej
-
-#!/bin/bash
-ifconfig | grep 'RX packets' | awk '{printf $5 "\n"}' | sort -nr | head -n 1
-
-4.2.Napisz skrypt, który wypisze adresy MAC wszystkich interfejsów sieciowych
-
-#!/bin/bash
-ifconfig | grep -o ..:..:..:..:..:..
-
-5.Napisz skrypt, który stworzy plik raport.txt, zawierający w każdym wierszu nazwę pliku oraz jego sumę kontrolną obliczoną algorytmem md5, dla każdego pliku *.txt w aktualnym katalogu. nazwa pliku i suma kontrolna powinny być oddzielone spacją. Wykorzystaj program md5sum.
-
-#!/bin/bash
-find -maxdepth 1 -type f -exec md5sum {} \; | awk '{$2 = substr($2, 3); printf $1 " " $2 "\n"}' > raport.txt
-
-6.Napisz program weryfikujący integralność plików w katalogu. Dla każdego pliku *.txt w aktualnym katalogu, porównaj jego sumę kontrolną obliczoną za pomocą program/*u md5 z sumą kontrolną zapisaną w pliku raport.txt z zadania poprzedniego, oraz wyświetl ostrzegawczy komunikat w przypadku rozbieżności.
-
-#!/bin/bash
-var=$(find -maxdepth 1 -mindepth 1 -type f -exec md5sum {} \; | awk '{$2 = substr($2, 3); printf $1 " " $2 "\n"}'  | grep -v -e raport.txt -e $0)
-var2=$(cat raport.txt | grep -v -e raport.txt -e $0)
-if [ "$var" != "$var2" ]
-then
- echo "Error"
-fi
-
-7.Napisz skrypt, który na podstawie pliku wejściowego wskazanego pierwszym argumentem wyświetli nazwy trzech planet o największej liczbie księżycy, w kolejności alfabetycznej.
-
-#!/bin/bash
-cat $1 | sort -n -r -k 4 | head -3 | sort
-
-8.W pliku trees.txt zapisane są w formacie csv informacje o kilku drzewach rosnących w ogrodzie (wraz z nagłówkiem w pierwszej linii, informującym o zawartości kolumn pliku). Napisz skrypt, który zapisze do pliku output.txt 3 wysokości dwóch najwyższych brzóz o statusie “chronione”. (UWAGA błąd w pliku trees.txt)
-
-#!/bin/bash
-cat trees.txt | tail -n +2 | grep chronione | grep brzoza | awk -F',' '{printf $3 "\n"}' | sort -n -r | head -2 > output.txt
-
-9.Napisz skrypt, który sklei zawartość wszystkich plików przekazanych jako argumenty i wypisze w konsoli
-
-#!/bin/bash
-for file in $*
-do
-cat $file|  awk -v vname=$(basename $file) '{ printf vname ": " $1 "\n" }'
-done
-
-10.Napisz skrypt, który zliczy i wypisze sumę znaków we wszystkich plikach podanych jako argumenty wywołania.
-
-#!/bin/bash
-cat $* | tr -d '\n' | wc -c
-
-11.Napisz skrypt, który utworzy w katalogu domowym folder pictures_backup i skopiuje do niego wszystkie pliki z rozszerzeniem jpg znajdujące się w bieżącym katalogu, a następnie zmieni nowym plikom prawa dostępu na tylko do odczytu.
-
-#!/bin/bash
-mkdir ~/pictures_backup
-ls -a | grep "\.jpg"$ | xargs -I{} cp -u {} ~/pictures_backup
-chmod 444 ~/pictures_backup/*
-
-12.Napisz skrypt, który przydzieli plikom odpowiednie prawa dostępu na podstawie par argumentów plik - prawa dostępu w notacji numerycznej.
-
-#!/bin/bash
-while [ $1 ]
-do 
- chmod $2 $1
- shift
- shift
-done
-
-13.Napisz skrypt, który dopisze tekst określony jako pierwszy argument wywołania na końcu wszystkich plików z rozszerzeniem zdefiniowanym jako drugi argument i znajdujących się w bieżącym katalogu.
-
-#!/bin/bash
-for line in *.$2
-do
- echo $1 >> $line0
-done
-
-14.Napisz skrypt, który zsumuje wielkości plików w bieżącym katalogu dla każdego rozszerzenia podanego jako argument.
-
-#!/bin/bash
-for var in $*
-do
- ls -l | grep "."$var | awk '{printf $5 "\n"}' | awk -v text=$var '{s+=$1} END {print text ": " s}'
-done
-
-15.Napisz skrypt, który wyświetli pierwszą linię od końca z pliku podanego jako pierwszy argument, drugą linię od końca z pliku podanego jako drugi argument itd. eżeli dany plik jest zbyt krótki, wyświetl stosowny komunikat.
-
-#!/bin/bash
-cat $1 | tail -1
-var=$(wc -l $2 | awk '{printf $1}')
-if [ $var -gt 1 ]
- then
- cat $2 | tail -2 | head -1
- else
- echo "Plik drugi ma z mało linii
-fi
-
-16.Napisz skrypt przyjmujący dwa argumenty - dwie nazwy plikow, który porówna zawartość tych dwóch plików tekstowych. Jeżeli zawartość obu plików jest jednakowa skrypt powinien wypisać wiadomość: pliki jednakowe Jeżeli pliki są różne, skrypt powinien wypisać który z nich ma więcej linii, np.: plik1.txt ma więcej linii niż plik2.txt
-Do porównania zawartości plików możesz wykorzystać komendę diff plik1.txt plik2.txt
-
-#!/bin/bash
-t1=$(cat $1)
-t2=$(cat $2)
-if [ "$t1" == "$t2" ]
-then
- echo "pliki jednakowe"
-else
- l1=$(cat $1 | wc -l)
- l2=$(cat $2 | wc -l)
- if [ "$l1" -gt "$l2" ]
- then
-  echo "plik $1 ma wiecej linii niz $2"
- elif [ "$l1" -lt "$l2" ]
- then
-  echo "plik $2 ma wiecej linii niz $1"
- else
-  echo "pliki maja tyle samo linii ale sie roznia"
- fi
-fi
-
-17.Stwórz w pustym katalogu 3 pliki: plik1.txt, plik2.txt oraz plik3.txt. Umieść w każdym kilka słów. Napisz skrypt, który zamieni nazwy wszystkich plików w tym katalogu na liczbę znaków w danym pliku.
-
-#!/bin/bash
-for file in $*
-do
- count=$(cat $file | wc -w) 
- path=$(dirname $file)"/"$count
- mv $file $path
-done
-
-18.Napisz skrypt, który w pętli wczytuje z klawiatury numer (PID) procesu, numer sygnału a następnie wysyła wskazany sygnał do określonego procesu. Wpisanie słowa EXIT kończy pracę skryptu.
-
-#!/bin/bash
-while true
-do
- read -p "Enter PID: " pid
- if [ "$pid" == "EXIT" ]
- then
-  break
- elif [ "$pid" ]
- then
-  kill -STOP $pid 
- fi
-done
-
-19.Napisz skrypt zmieniający rekursywnie nazwę każdego katalogu (pomijając pliki!) na wielkie litery.
-
-#!/bin/bash
-var1=$(find $1 -type d | sort -n -r)
-for dir in $var1
-do 
- var2=$(basename $dir | tr a-z A-Z)
- var3=$(dirname $dir)
- var5=$(echo $var3"/"$var2)
- mv $dir $var5 
-done
-
-20.UUID (universally unique identifier) lub GUID jest to identyfikator globalnie unikatowy – identyfikator obiektów między innymi w systemie Windows lub wszędzie, gdzie potrzebny jest unikatowy identyfikator
-
-#!/bin/bash
-for i in {1..10}
-do
- uuidgen
-done | sort > id.txt
-
-21.
-
-#!/bin/bash
-function fib(){
- if (( $1 <= 0 ))
-  then
-   echo 1
-  else 
-   echo $(( $(fib $(($1-1)) ) + $(fib $(($1-2)) ) ))
- fi
-}
-read -p "Enter number: " val2
-val=$(fib $val2)
-echo $val
-
-
--- TESTOWY TEST --
-
-1.Napisz skrypt, który utworzy w bieżącym katalogu folder photos, a następnie przeniesie do niego wszystkie plik z rozszerzeniami jpg i png znajdujące się w bieżącym katalogu. Przeniesionym plikom ustaw prawa dostępu na tylko do odczytu. (na potrzby własnych testów utwórz samodzielnie kilka plików jpg i png) 
-
-#!/bin/bash
-var="photos"
-mkdir $var
-ls -a | grep -e "\.jpg"$ -e "\.png"$| xargs -I{} mv -u {} $var
-chmod 444 $var/*
-
-2.W pliku cars.txt zapisane są dane samochodów w formacie rok;model;prędkość. Wyświetl w jednej linii nazwy samochodów posortowane rosnąco wg prędkości, oddzielone przecinkami. Przekaż plik cars.txt jako argument do skryptu.
-
-#!/bin/bash
-cat $1 | sort -k 3 -r | awk -F ';' 'a++{printf ","}{printf $2} END {print ""}'
-
-3.Napisz skrypt, który będzie zliczał plików i katalogów, które znajdują się w podanym katalogu (argument do skryptu), bez zliczania w podkatalogach. Jeśli argument nie został podany zliczanie ma dotyczyć katalogu bieżącego. Przykład:
-
-#!/bin/bash
-find $1 -maxdepth 1 -mindepth 1 -type d | wc -l | awk -v text=$1 '{printf "Liczba katalogow w katalogu " text " = " $1 "\n"}'
-find $1 -maxdepth 1 -mindepth 1 -not -type d | wc -l | awk -v text=$1 '{printf "Liczba plikow w katalogu " text " = " $1 "\n"}'
-find $1 -maxdepth 1 -mindepth 1 | wc -l | awk '{printf "Suma = " $1 "\n"}
-
--- TEST SKRYPTU --
-
-1. Napisz skrypt, który zwróci liczbę wystąpień wybranego słowa w zadanym pliku. Zarówno słowo jak i lokalizacja pliku przekazywane są jako argumenty do skryptu. Słowo może następować lub poprzedzać dowolny inny ciąg znaków i może wystąpić więcej niż raz w jednej linii, np.
-
-#!/bin/bash
-cat $2 | grep -o $1 | wc -w
 </details>
