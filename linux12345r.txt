@@ -16,11 +16,7 @@
 	ls ~
 
 6.Wyświetl zawartość podstawowych katalogów w systemie (np. /dev, /etc, /home, /usr).
-	ls /etc;
-	ls /dev
-	ls /etc
-	ls /home
-	ls /usr
+	ls /etc /dev /etc /home /usr
 
 7.Utwórz katalog kat1 w katalogu domowym.
 	mkdir ~/kat1
@@ -32,11 +28,7 @@
 	rm -r ~/kat1/kat2/kat3
 
 10.Utwórz w katalogu domowym pliki o dowolnych nazwach z rozszerzeniami .txt i .c (po 2-3 pliki z każdym z rozszerzeń)
-	touch ~/x.txt
-	touch ~/xD.txt
-	touch ~/xDD.txt
-	touch ~/y.c
-	touch ~/y.cc
+	touch ~/x.txt ~/xD.txt ~/xDD.txt ~/y.c ~/y.cc
 
 11.Skopiuj jednym poleceniem wszystkie pliki z katalogu domowego z rozszerzeniem .txt do katalogu kat1.
 	cp ./*.txt ~/kat1
@@ -69,11 +61,10 @@
 	find /usr/bin -size +10 -size -100 -exec cp {} ~/kat1/kat2 \;
 
 21.W katalogu domowym utwórz plik o nazwie plik.txt - sprawdź jakie są prawa dostępu do niego.
-	touch ~/plik.txt
-	ls -l
+	touch ~/plik.txt | ls -l ~
 
 22.Dla pliku plik.txt dodaj prawo zapisu dla pozostałych użytkowników.
-	chmod a+w ~/pliK.txt
+	chmod a+w ~/plik.txt
 
 23.Dla pliku plik.txt odejmij prawo zapisu dla właściciela.
 	chmod u-w ~/plik.txt
@@ -94,7 +85,7 @@
 	ln -s ~/kat1/kat2 ~/abc
 
 29.Przejrzyj pomoc systemową dla wszystkich poleceń zaprezentowanych podczas zajęć.
-	ok
+	nazwa_komendy --help
 
 -- LAB 02 --
 
