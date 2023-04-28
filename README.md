@@ -1,187 +1,644 @@
--- LAB 01 --
+# Linux commands Q&A for SCR in PP on AiR
 
-1.Zmień własne hasło. Następnie powróć do hasła domyślnego.
+## Lab 1
+<details>
+<summary>Expand!</summary>
+
+1. Change your own password. Then go back to the default password.
+	
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	passwd
+	```
+	
+	</details>
 
-2.Sprawdź własny identyfikator oraz grupy, do których należysz.
+2. Check your own ID and the groups you belong to.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	id
+	```
+		
+	</details>
 
-3.Sprawdź kto jest zalogowany w chwili obecnej w systemie.
-	who
+3. Check who is currently logged into the system.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
+	whoami
+	```
+		
+	</details>
+4. See the description of the directory structure.
+	
+	<details>
+	<summary>Answer</summary>
 
-4.Zapoznaj się z opisem struktury katalogów
+	```
 	man 7 hier
-
-5.Wyświetl zawartość katalogu domowego.
+	```
+		
+	</details>
+	
+5. View the contents of your home directory.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	ls ~
-
-6.Wyświetl zawartość podstawowych katalogów w systemie (np. /dev, /etc, /home, /usr).
+	```
+		
+	</details>
+	
+6. List the contents of the primary directories on your system (e.g. /dev, /etc, /home, /usr).
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	ls /etc /dev /etc /home /usr
+	```
+		
+	</details>	
 
-7.Utwórz katalog kat1 w katalogu domowym.
+7. Create directory kat1 in your home directory.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	mkdir ~/kat1
-
-8.W katalogu kat1 utwórz jednym poleceniem strukturę katalogów kat2/kat3/kat4.
+	```
+		
+	</details>
+		
+8. In directory kat1, create a directory structure with one command: kat2/kat3/kat4.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	mkdir -p ~/kat1/kat2/kat3/kat4
-
-9.Usuń jednym poleceniem cała strukturę katalogów kat3/kat4.
+	```
+		
+	</details>
+	
+9. Delete the entire directory structure of kat3/kat4 in one command.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	rm -r ~/kat1/kat2/kat3
-
-10.Utwórz w katalogu domowym pliki o dowolnych nazwach z rozszerzeniami .txt i .c (po 2-3 pliki z każdym z rozszerzeń)
-	touch ~/x.txt ~/xD.txt ~/xDD.txt ~/y.c ~/y.cc
-
-11.Skopiuj jednym poleceniem wszystkie pliki z katalogu domowego z rozszerzeniem .txt do katalogu kat1.
+	```
+		
+	</details>
+	
+10. Create files with any names with extensions .txt and .c in your home directory (2-3 files with each extension)
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
+	touch ~/xD.txt ~/xDD.txt ~/xDDD.txt ~/y.c ~/y.cc
+	```
+		
+	</details>
+	
+11. Copy all the files from the home directory with the extension .txt to the directory kat1 with one command.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	cp ./*.txt ~/kat1
+	```
+		
+	</details>
 
-12.Skopiuj jednym poleceniem wszystkie pliki z katalogu domowego z rozszerzeniem .c do katalogu kat2.
+12. Copy all files from the home directory with the extension .c to the directory kat2 with one command.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	cp ./*.c ~/kat1/kat2
-
-13.Skopiuj całą strukturę katalogów kat1 tworząc analogiczną strukturę o nazwie kat1b.
+	```
+		
+	</details>
+	
+13. Copy the entire directory structure of kat1 creating an analogous structure called kat1b.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	cp -r ~/kat1 ~/kat1b
-
-14.Usuń wszystkie pliki z katalogu kat1/kat2.
+	```
+		
+	</details>
+	
+14. Delete all files in kat1/kat2.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	rm ~/kat1/kat2/*
+	```
+		
+	</details>
 
-15.Usuń jednym poleceniem całą strukturę katalogów kat1b.
+15. Delete the entire directory structure of kat1b with one command.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	rm -r ~/kat1b
-
-16.Zmień nazwę dowolnego pliku w katalogu kat1.
+	```
+		
+	</details>
+	
+16. Rename any file in directory kat1.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	mv ~/kat1/x.txt ~/kat1/xx.txt
+	```
+		
+	</details>	
 
-17.Przenieś katalog kat1/kat2 do katalogu domowego tworząc w ten sposób katalog kat2b.
+17. Move the directory kat1/kat2 to your home directory, thus creating the directory kat2b.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	mv ~/kat1 ~/kat2b
+	```
+		
+	</details>	
 
-18.Korzystając z programu find znajdź wszystkie pliki, które posiadają w nazwie słowo mozilla i znajdują się w podkatalogach katalogu /usr.
+18. Using the find program, find all files that have the word mozilla in the name and are located in subdirectories of the /usr directory.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	find /usr -name mozilla
+	```
+	
+	</details>	
 
-19.Korzystając z programu find znajdź wszystkie katalogi o nazwie bin, które znajdują się w katalogu /usr.
+19. Using the find program, find all the bin directories that are in the /usr directory.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	find /usr -type d -name bin
+	```
+	
+	</details>	
 
-20.Skopiuj wszystkie pliki zwykłe o rozmiarze pomiędzy 10 a 100 bajtów z katalogu /usr/bin do katalogu kat1/kat2 (wykorzystaj polecenie find z parametrem -exec).
+20. Copy all regular files between 10 and 100 bytes from /usr/bin to kat1/kat2 (use the find command with the -exec parameter).
+	
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	find /usr/bin -size +10 -size -100 -exec cp {} ~/kat1/kat2 \;
-
-21.W katalogu domowym utwórz plik o nazwie plik.txt - sprawdź jakie są prawa dostępu do niego.
+	```
+	
+	</details>
+	
+21. In your home directory, create a file named plik.txt - check the access rights to it.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	touch ~/plik.txt | ls -l ~
-
-22.Dla pliku plik.txt dodaj prawo zapisu dla pozostałych użytkowników.
+	```
+		
+	</details>
+	
+22. For plik.txt, add write access for other users.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	chmod a+w ~/plik.txt
-
-23.Dla pliku plik.txt odejmij prawo zapisu dla właściciela.
+	```
+		
+	</details>
+	
+23. For plik.txt, subtract the owner's write permission.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	chmod u-w ~/plik.txt
-
-24.Dla pliku plik.txt dodaj prawo wykonywania dla wszystkich użytkowników.
+	```
+	
+	</details>
+	
+24. For plik.txt, add execute permission for all users.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	chmod +x ~/plik.txt
+	```
 
-25.Dla pliku plik.txt i wszystkich użytkowników zezwól jedynie na odczyt pliku.
+	</details>
+	
+25. For file plik.txt and all users, allow only file read.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	chmod 444 ~/plik.txt
+	```
+		
+	</details>
 
-26.Dla pliku plik.txt przywróć oryginalne prawa korzystając z notacji numerycznej.
+26. For file plik.txt, restore the original rights using numerical notation.
+	
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	chmod 664 ~/plik.txt
+	```
+	
+	</details>
 
-27.Utwórz dowiązanie do pliku plik.txt o nazwie plik2.txt w katalogu domowym.
+27. Create a link to plik.txt named plik2.txt in your home directory.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	ln ~/plik.txt ~/plik2.txt
+	```
+	
+	</details>
 
-28.Utwórz dowiązanie symboliczne do katalogu kat1/kat2 o nazwie abc w katalogu domowym.
+28. Create a symbolic link to directory kat1/kat2 named abc in your home directory.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	ln -s ~/kat1/kat2 ~/abc
+	```
+	
+	</details>
 
-29.Przejrzyj pomoc systemową dla wszystkich poleceń zaprezentowanych podczas zajęć.
-	nazwa_komendy --help
+29. View the system help for all the commands presented in the class.
+	
+	<details>
+	<summary>Answer</summary>
 
--- LAB 02 --
+	```
+	your_command --help
+	```
+		
+	</details>
+	
+</details>
+	
+## Lab 02
+<details>
+<summary>Expand!</summary>
 
-1.Wyświetl listę własnych procesów komendą ps. Porównaj wyniki z wynikami poleceń: ps ­x i ps ­ax.
-	a - wypisuje wszystkie procesy z tty
+1. List your own processes with the ps command. Compare the results with the results of the ps x and ps ax commands.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	a - This option prints the running processes from all users. <br>
+	x - This option prints the processes those have not been executed from the terminal.
+		
+	</details>
 
-2.Zaloguj się do systemu kilkukrotnie poprzez wirtualne konsole lub otwierając nowe okno w środowisku graficznym. Każdorazowo sprawdź poleceniem tty nazwę terminala, na którym pracujesz.
+2. Log in to the system several times through virtual consoles or by opening a new window in the graphical environment. Always check the name of the terminal you are working on with the tty command.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	tty
-	/dev/pts/{nr_konsoli}
+	/dev/pts/{console_number}
+	```
+		
+	</details>
 
-3.Wyświetl hierarchię procesów poleceniem pstree.
+3. Display the process hierarchy with the pstree command.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	pstree
+	```
+		
+	</details>
 
-4.Obejrzyj listę procesów poleceniem top sortując ją wg stopnia zajętości procesora i ilości zajętej pamięci (sprawdź przełącznik -o)
+4. View the list of processes with the top command, sorting it by CPU usage and memory usage (check the -o switch)
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	top
 	top -o %MEM
+	```
+		
+	</details>
 
-5.Wykonaj kolejno następujące kroki:
+5. Follow these steps in order:
+	- Change the priority of the bash shell you are currently in to 10.
+		
+		<details>
+		<summary>Answer</summary>
+			
+		```
+		sudo chvt 10
+		```
+		or <br>
+		<kbd> <br> CTRL <br> </kbd> + <kbd> <br> ALT <br> </kbd> + <kbd> <br> F10 <br> </kbd>
+			
+		</details>
+	
+	- Run the sleep command for 30 seconds. Pause them immediately with Ctrl-Z.
+		
+		<details>
+		<summary>Answer</summary>
+			
+		```
+		sleep 30s
+		```
+			
+		</details>
+	
+	- Run another sleep command in the background, this time for 3600 seconds.
+		
+		<details>
+		<summary>Answer</summary>
+			
+		```
+		sleep 3600s &
+		```
+			
+		</details>
+	
+	- List the active jobs in the current session with the jobs command.
+		
+		<details>
+		<summary>Answer</summary>
+			
+		```
+		jobs
+		```
+			
+		</details>
+	
+	- Check the priority and status (running/paused) of programs running in the current session with the appropriate ps command.
+	
+		<details>
+		<summary>Answer</summary>
+			
+		```
+		ps a
+		```
+			
+		</details>
 
-  - Zmień priorytet powłoki bash, w której aktualnie się znajdujesz na 10.
-	sudo chvt 10 / Ctrl + Alt + F10
+	- Restore suspended sleep in the background.
+	
+		<details>
+		<summary>Answer</summary>
+			
+		```
+		kill -CONT {id_procesu}
+		```
+			
+		</details>
 
-  - Uruchom polecenie sleep na 30 sekund. Od razu wstrzymaj je kombinacją Ctrl-Z.
-	sleep 30s
+	- Check for active jobs with the jobs command until sleep 30 ends.
+	
+		<details>
+		<summary>Answer</summary>
+			
+		```
+		jobs
+		```
+			
+		</details>
+	
+	- End sleep 3600 by bringing it back to the foreground and closing it with Ctrl-C.
+	
+		<details>
+		<summary>Answer</summary>
+	
+		```
+		fg {id_from_jobs}
+		```
+		
+		</details>
 
-  - Uruchom w tle kolejne polecenie sleep, tym razem na 3600 sekund.
-	sleep 3600s &
+6. Run the sleep 1000 sequence in the background; touch sleep_finished. Check if sleep_finished file exists. End the sleep process with the TERM signal. Check again for existence of sleep_finished.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```	
+	sleep 1000 &
+	touch ~/sleep_finished
+	ls ~/sleep_finished
+	```
+		
+	<kbd> <br> CTRL <br> </kbd> + <kbd> <br> C <br> </kbd>
+		
+	```
+	ls ~/sleep_finished
+	```
+		
+	it exist
+		
+	</details>
 
-  - Wyświetl aktywne zadania w bieżącej sesji komendą jobs.
-	jobs
+7. Launch an application with a GUI, such as the Mousepad text editor. Check its PID. Send a STOP signal to its process, check if the application responds. Send a CONT signal.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
+	kill -STOP {process_PID}
+	kill -CONT {process_PID}
+	```
+		
+	</details>
 
-  - Sprawdź odpowiednim poleceniem ps priorytet i status
-    (uruchomiony/wstrzymany) uruchomionych w bieżącej sesji programów.
-      ps a
+8. Create a folder in your home directory called readonly. Remove write access to it. Then execute the command that will try to create the file in it, and in case of failure it will display ERROR message (command echo ERROR).
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```	
+	mkdir ~/readonly | chmod 444 ~/readonly
+	touch ~/readonly/xd.txt || echo ERROR
+	```
+		
+	</details>
 
-  - Przywróć w tle działanie wstrzymanego sleep.
-	kill -CONT {id_procesu}
-
-  - Sprawdzaj aktywne zadania poleceniem jobs aż do zakończenia sleep 30
-	jobs
-
-  - Zakończ sleep 3600 przywracając go na pierwszy plan i zamykając kombinacją Ctrl-C.
-	fg {identyfikator_z_jobs}
-
-6.Uruchom w tle sekwencję sleep 1000 ; touch sleep_finished. Sprawdź czy istnieje plik sleep_finished. Zakończ proces sleep sygnałem TERM. Sprawdź ponownie istnienie pliku sleep_finished.
-	istnieje
-
-7.Uruchom aplikację z GUI, np. edytor tekstu Mousepad. Sprawdź jego PID. Wyślij do jego procesu sygnał STOP, sprawdź czy aplikacja reaguje. Wyślij sygnał CONT.
- 	kill -STOP {PID_procesu}
-	kill -CONT {PID_procesu}
-
-8.Utwórz w swoim katalogu domowym folder o nazwie readonly. Usuń prawa do zapisu w nim. Następnie wykonaj komendę, która spróbuje utworzyć w nim plik, a w przypadku niepowodzenia wyświetli komunikat ERROR (polecenie echo ERROR).
-	mkdir readonly
-	chmod 444 readonly
-	touch readonly/xd.txt || echo ERROR
-
-9.Przejdź do katalogu /proc i odczytaj jego zawartość poleceniem ls -l /proc.
+9. Go to the /proc directory and read its contents with ls -l /proc.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	cd /proc
 	ls -l /proc
-
-10.Porównaj wartości PID procesów wskazywanych po wywołaniu programu ps z nazwami katalogów w folderze /proc. Następnie spróbuj przejść do katalogu o nazwie odpowiadającej PID procesu ps - czy podany katalog nadal istnieje?
+	```
+		
+	</details>
+	
+10. Compare the PIDs of the processes pointed to when ps is invoked with the names of the directories in the /proc folder. Then try to go to the directory named corresponding to the PID of the ps process - does the given directory still exist?
+	
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	ps
-	nie
+	```
+	
+	no
+	
+	</details>
 
-11.Przejdź do podkatalogu w /proc o nazwie odpowiadającej PID procesu bash (uzyskasz go po wpisaniu ps). Przejrzyj jego zawartość i wyświetl zawartość pliku status. Zwróc uwagę na przechowywane informacje (np. Name, State,PID).
+11. Go to the subdirectory in /proc named after the PID of the bash process (you can get it by typing ps). Browse its contents and view the contents of the status. Pay attention to the information stored (e.g. Name, State,PID).
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	ps
 	cat status
+	``
+	
+	</details>
 
-12.Sprawdź informacje o tym na jakim procesorze obecnie pracujesz. W tym celu odczytaj zawartość pliku cpuinfo poleceniem cat /proc/cpuinfo
+12. Check the information on which processor you are currently working on. To do this, read the content of the cpuinfo file with the cat /proc/cpuinfo command
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	cat /proc/cpuinfo
+	```
+	
+	</details>
 
-13.Sprawdź informacje o wykorzystaniu pamięci RAM. W tym celu odczytaj zawartość pliku meminfo poleceniem cat /proc/meminfo.
+13. Check the RAM usage information. To do this, read the contents of the meminfo file with the command cat /proc/meminfo.
+	
+	<details>
+	<summary>Answer</summary>
+		
+	```
 	cat /proc/meminfo
+	```
+	
+	</details>
 
-14.Korzystając z Nano zwiększ rozmiar przechowywanej historii bash (wartość HISTSIZE w pliku .bashrc w katalogu domowym)
+14. Using Nano, increase the size of the bash history stored (HISTSIZE value in the .bashrc file in your home directory)
+	
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	nano .bashrc
-	Ctrl + W -> HISTSIZE
-	Ctrl + X -> Y
+	```
+	
+	<kbd> <br> CTRL <br> </kbd> + <kbd> <br> W <br> </kbd> ➤  <kbd> <br> HISTSIZE <br> </kbd> <br>
+	
+	<kbd> <br> CTRL <br> </kbd> + <kbd> <br> X <br> </kbd> ➤  <kbd> <br> Y <br> </kbd> <br>
+	
+	</details>
 
-15.Korzystając z Vim-a wyedytuj dowolny plik tekstowy.
-	i
-	:x
+15. Using Vim, edit any text file.
+	<details>
+	<summary>Answer</summary>
+	
+	```
+	vim xD.txt
+	```
+	write something <br>
+	<kbd> <br> SHIFT <br> </kbd> + <kbd> <br> ; <br> </kbd> <br> + 
+		<kbd> <br> x <br> </kbd> + <kbd> <br> ENTER <br> </kbd>
+	
+	</details>
 
-16.Uruchom w pojedynczej konsoli, w tle trzy edytory nano, dla trzech różnych plików. Sprawdź procesy działające w tle w bieżącym terminalu komendą jobs. Naucz się przywracać wybrany proces na pierwszy plan.
+16. Run in a single console, three nano editors in the background, for three different files. Check the background processes in the current terminal with the jobs command. Learn to bring the selected process back to the foreground.
+	
+	<details>
+	<summary>Answer</summary>
+	
+	```
 	sudo chmod 777 /etc/nanorc
 	nano /etc/nanorc
+	```
+		
 	unocomment allow nano to suspend
+		
+	```
 	nano x.txt
-	Ctrl + Z
+	```
+		
+	<kbd> <br> CTRL <br> </kbd> + <kbd> <br> Z <br> </kbd>
+	
+	```
 	nano xD.txt
-	Ctrl + Z
+	```
+		
+	<kbd> <br> CTRL <br> </kbd> + <kbd> <br> Z <br> </kbd>
+		
+	```
 	nano xDD.txt
-	Ctrl + Z
+	```
+		
+	<kbd> <br> CTRL <br> </kbd> + <kbd> <br> Z <br> </kbd>
+	
+	```
 	jobs
 	bg 1
+	```
+	
+	</details>
 
+</details>
+	
+
+<details>
+<summary>TODO</summary>
+	
 -- LAB 03 --
 
 1.Wyświetl plik /etc/passwd z podziałem na strony przyjmując, że strona ma 5 linii tekstu. Podpowiedź: sprawdź program more
@@ -539,3 +996,4 @@ find $1 -maxdepth 1 -mindepth 1 | wc -l | awk '{printf "Suma = " $1 "\n"}
 
 #!/bin/bash
 cat $2 | grep -o $1 | wc -w
+</details>
