@@ -1,4 +1,11 @@
-# Bash example tasks
+# Solutions for Linux Bash tasks
+for Real Time Systems subject in Automatic and Robotics
+on Poznan University of Technology
+
+Course repo:
+
+[https://github.com/PUT-JUG/proj-scr](https://github.com/PUT-JUG/proj-scr)
+
 
 ## Lab 1
 
