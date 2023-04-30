@@ -1,6 +1,5 @@
-# Solutions for Linux Bash tasks
-for Real Time Systems subject in Automatic and Robotics
-on Poznan University of Technology
+# Solutions for Linux Bash tasks for SCR AiR
+(for Real Time Systems subject in Automatic and Robotics on Poznan University of Technology)
 
 Course repo:
 
